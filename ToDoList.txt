@@ -1,0 +1,6 @@
+Zabawa w klocki:
+- Player/platform movement script
+- Random target spawwning script
+- UI/score system
+
++ - (done)
