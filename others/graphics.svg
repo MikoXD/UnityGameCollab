@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="graphics.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#606060"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:showpageshadow="false"
+     borderlayer="true"
+     inkscape:snap-page="true"
+     inkscape:zoom="1.1687991"
+     inkscape:cx="337.52593"
+     inkscape:cy="353.78193"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1432"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Background"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:1.182;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.408824"
+       id="rect849"
+       width="210"
+       height="297"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 1">
+    <circle
+       style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:3.96875;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path845"
+       cx="117.03429"
+       cy="122.91995"
+       r="13.582313"
+       inkscape:export-filename="D:\Janek_prywatne_D\unity\Gra z mikim\UnityGameCollab\UnityGameCollab\Assets\Sprites\ball.png"
+       inkscape:export-xdpi="195.8027"
+       inkscape:export-ydpi="195.8027" />
+    <rect
+       style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:3.96875;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect6133"
+       width="150"
+       height="20"
+       x="41.652435"
+       y="143.51981"
+       ry="10"
+       inkscape:export-filename="D:\Janek_prywatne_D\unity\Gra z mikim\UnityGameCollab\UnityGameCollab\Assets\Sprites\platform.png"
+       inkscape:export-xdpi="195.80299"
+       inkscape:export-ydpi="195.80299" />
+    <rect
+       style="opacity:1;fill:#fdfdfd;fill-opacity:1;stroke:#000000;stroke-width:3.96875;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect7600"
+       width="33.503044"
+       height="33.503044"
+       x="32.823933"
+       y="22.863567"
+       ry="5.4725676"
+       inkscape:export-filename="D:\Janek_prywatne_D\unity\Gra z mikim\UnityGameCollab\UnityGameCollab\Assets\Sprites\brick.png"
+       inkscape:export-xdpi="195.80299"
+       inkscape:export-ydpi="195.80299" />
+  </g>
+</svg>
