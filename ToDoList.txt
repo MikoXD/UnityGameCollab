@@ -1,6 +1,9 @@
 Zabawa w klocki:
-- Player/platform movement script +
-- Random target spawning script
-- UI/score system
+- Player/platform movement script [M]+
+- Random target spawning script [M]
+- UI/score system script [J]
+- Menu (diff scene) [J]
+- Power-ups script (if we choose to) [M]
+- Graphics (if we choose to add more) [J]
 
-+ - (done)
++ -> (done)
