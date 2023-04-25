@@ -6,8 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
     public float speed = 8f;
-
-    [SerializeField] public Rigidbody rb;
+    public Rigidbody2D rb;
 
     void Update()
     {
