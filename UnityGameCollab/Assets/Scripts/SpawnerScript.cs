@@ -5,11 +5,14 @@ using UnityEngine;
 public class SpawnerScript : MonoBehaviour
 {
     [SerializeField] private GameObject brick;
-    private int brickCount;
+    public int brickCount;
     private int lvl = 1;
 
     private void Update()
     {
-        
+        if (brickCount == 0)
+        {
+            lvl++;
+        }
     }
 }
