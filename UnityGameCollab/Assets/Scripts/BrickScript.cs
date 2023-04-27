@@ -5,10 +5,12 @@ using UnityEngine;
 public class BrickScript : MonoBehaviour
 {
     public SpawnerScript spawn;
+    public SpawnerScript logic;
 
     private void Start()
     {
         spawn = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnerScript>();
+        logic = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,6 +18,7 @@ public class BrickScript : MonoBehaviour
         {
             Destroy(gameObject);
             spawn.brickCount--;
+            logic.addScore(1);
         }
     }
 }
