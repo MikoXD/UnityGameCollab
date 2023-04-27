@@ -158,8 +158,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+Lvls
+  m_AnchoredPosition: {x: -780, y: 450}
+  m_SizeDelta: {x: 243.6, y: 120}
+
   m_AnchoredPosition: {x: -729, y: 438}
   m_SizeDelta: {x: 251.7774, y: 115.7176}
+main
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &227193835
 MonoBehaviour:
@@ -215,7 +220,7 @@ GameObject:
   - component: {fileID: 477129344}
   m_Layer: 0
   m_Name: LogicManager
-  m_TagString: Untagged
+  m_TagString: LogicManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,7 +558,7 @@ GameObject:
   - component: {fileID: 1204429704}
   - component: {fileID: 1204429706}
   - component: {fileID: 1204429707}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,6 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1204429704}
+  player: {fileID: 1521749443}
   ballSpeed: 7
 --- !u!1 &1521749442
 GameObject:
@@ -693,7 +699,7 @@ GameObject:
   - component: {fileID: 1521749453}
   - component: {fileID: 1521749452}
   - component: {fileID: 1521749451}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971901975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1007,3 +1013,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brick: {fileID: 3328342706824316554, guid: 5dca411fd19f8b94ea6d75924fbfd661, type: 3}
   brickCount: 0
+  lvl: 1
