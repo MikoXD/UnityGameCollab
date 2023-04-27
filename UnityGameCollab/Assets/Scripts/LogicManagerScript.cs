@@ -22,7 +22,7 @@ public class LogicManagerScript : MonoBehaviour
         }
     }
 
-    public void addScore(int scoreToAdd)
+    public void addScore(int scoreToAdd = 1)
     {
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
