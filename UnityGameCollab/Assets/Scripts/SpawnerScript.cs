@@ -85,6 +85,6 @@ public class SpawnerScript : MonoBehaviour
                 Instantiate(brick, transform.position + new Vector3(0.5f, -1f, 0f), transform.rotation);
             }
         }
-        brickCount = bricksOnSide * 2;
+        brickCount += bricksOnSide * 2;
     }
 }
