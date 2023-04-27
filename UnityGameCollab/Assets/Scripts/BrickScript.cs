@@ -5,7 +5,7 @@ using UnityEngine;
 public class BrickScript : MonoBehaviour
 {
     public SpawnerScript spawn;
-    public SpawnerScript logic;
+    public LogicManagerScript logic;
 
     private void Start()
     {
