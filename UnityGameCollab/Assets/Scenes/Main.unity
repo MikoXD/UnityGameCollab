@@ -233,10 +233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
-<<<<<<< Updated upstream
-=======
+ Updated upstream
+
   scoreText: {fileID: 0}
->>>>>>> Stashed changes
+ Stashed changes
 --- !u!4 &477129345
 Transform:
   m_ObjectHideFlags: 0
