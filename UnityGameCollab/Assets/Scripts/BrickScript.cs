@@ -10,7 +10,7 @@ public class BrickScript : MonoBehaviour
     {
         spawn = GameObject.FindGameObjectWithTag("Spawner").GetComponent<SpawnerScript>();
     }
-    private void OnCollisionEnter2D(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 3)
         {
