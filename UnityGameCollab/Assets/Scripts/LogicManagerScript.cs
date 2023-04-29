@@ -27,4 +27,9 @@ public class LogicManagerScript : MonoBehaviour
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
     }
+
+    public void defeat()
+    {
+        Debug.Log("DEFEAT");
+    }
 }
