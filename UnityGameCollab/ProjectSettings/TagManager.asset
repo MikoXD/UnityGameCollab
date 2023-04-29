@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spawner
+  - LogicManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Platform
+  - Ball
   - Water
   - UI
-  - 
+  - Platform
   - 
   - 
   - 
