@@ -11,10 +11,12 @@ public class BallScript : MonoBehaviour
     public float ballSpeed = 10;
     private int debuger = 0;
     private Vector3 position;
+    public LogicManagerScript logic;
 
     void Start()
     {
         rb.velocity = new Vector2(-5, 5);
+        logic = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
     }
     private void Update()
     {
@@ -31,6 +33,16 @@ public class BallScript : MonoBehaviour
                 debuger = 0;
             }
             debuger++;
+        }
+
+        if (transform.position.y <= -5.5)
+        {
+            logic.defeat(1);
+        }
+
+        if (logic.gameLost)
+        {
+            rb.velocity = new Vector2(0, 0);
         }
 
         position = transform.position;
