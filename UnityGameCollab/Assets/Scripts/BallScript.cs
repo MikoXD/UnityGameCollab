@@ -37,7 +37,12 @@ public class BallScript : MonoBehaviour
 
         if (transform.position.y <= -5.5)
         {
-            logic.defeat();
+            logic.defeat(1);
+        }
+
+        if (logic.gameLost)
+        {
+            rb.velocity = new Vector2(0, 0);
         }
 
         position = transform.position;
