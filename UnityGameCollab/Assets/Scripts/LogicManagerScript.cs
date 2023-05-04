@@ -25,7 +25,7 @@ public class LogicManagerScript : MonoBehaviour
     void Start()
     {
         highScoreFileName = "Scores.txt";
-        highScoreFilePath = "..\\others\\" + highScoreFileName;
+        highScoreFilePath = @"..\others\" + highScoreFileName;
         if (!File.Exists(highScoreFilePath))
         {
             highScoreFileWriter = File.CreateText(highScoreFilePath);
