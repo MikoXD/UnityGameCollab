@@ -8,9 +8,10 @@ public class BallScript : MonoBehaviour
     [SerializeField] private Rigidbody2D BallRigidBody;
     [SerializeField] private Transform Platform;
 
+    public LogicManagerScript logic;
+
     public float ballSpeed = 10;
     public float bounceAngleMultiplier = 5;
-    public LogicManagerScript logic;
 
     void Start()
     {
@@ -23,14 +24,14 @@ public class BallScript : MonoBehaviour
     private void Update()
     {
         //Correcting ball velocity if it is different to ballSpeed
-        if (BallRigidBody.velocity.magnitude != ballSpeed)
+        if (BallRigidBody.velocity.magnitude != ballSpeed && !logic.gameLost)
         {
             BallRigidBody.velocity = BallRigidBody.velocity.normalized * ballSpeed;
             Debug.Log("Ball velocity set back to " + ballSpeed);
         }
 
         //Correcting ball vector if it's horizontal (olr close to)
-        if (Math.Abs(BallRigidBody.velocity.y) < 0.5)
+        if (Math.Abs(BallRigidBody.velocity.y) < 0.5 && !logic.gameLost)
         { 
             BallRigidBody.velocity = new Vector2(BallRigidBody.velocity.x, Math.Abs(BallRigidBody.velocity.y) + 1);
             Debug.Log("Ball vector corrected");
@@ -43,7 +44,7 @@ public class BallScript : MonoBehaviour
         }
 
         //Ball's velocity is set to 0 when game is lost
-        if (logic.gameLost)
+        if (logic.gameLost && BallRigidBody.velocity.magnitude != 0)
         {
             BallRigidBody.velocity = new Vector2(0, 0);
             Debug.Log("Ball velocity set to 0");

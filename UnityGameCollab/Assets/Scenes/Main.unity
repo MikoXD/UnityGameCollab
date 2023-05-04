@@ -832,8 +832,8 @@ Transform:
   m_GameObject: {fileID: 1204429702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.28, z: 0}
-  m_LocalScale: {x: 0.2487, y: 0.2487, z: 0.2487}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -939,10 +939,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7bcfa31e9403544d968a17d2e9cdbe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1204429704}
-  player: {fileID: 1521749443}
-  ballSpeed: 7
+  BallRigidBody: {fileID: 1204429704}
+  Platform: {fileID: 1521749443}
   logic: {fileID: 0}
+  ballSpeed: 15
+  bounceAngleMultiplier: 6
 --- !u!1 &1289412479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1040,7 @@ GameObject:
   - component: {fileID: 1521749452}
   - component: {fileID: 1521749451}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,8 +1055,8 @@ Transform:
   m_GameObject: {fileID: 1521749442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.53, z: 0}
-  m_LocalScale: {x: 0.27522, y: 0.27522, z: 0.27522}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1072,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb5ba92ef9a92b408a65f9613ca5235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 24
   rb: {fileID: 1521749450}
 --- !u!212 &1521749446
 SpriteRenderer:
@@ -1138,7 +1139,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.8244929
+  m_Mass: 3.8539157
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -1353,7 +1354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brick: {fileID: 3328342706824316554, guid: 5dca411fd19f8b94ea6d75924fbfd661, type: 3}
   brickCount: 0
-  lvl: 1
+  lvl: 4
 --- !u!1 &2112793988
 GameObject:
   m_ObjectHideFlags: 0
