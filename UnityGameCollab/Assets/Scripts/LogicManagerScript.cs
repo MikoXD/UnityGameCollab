@@ -21,9 +21,11 @@ public class LogicManagerScript : MonoBehaviour
     public StreamReader highScoreFileReader;
     public string highScoreFilePath;
     public string highScoreFileName;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Creating the Scores.txt file
         highScoreFileName = "Scores.txt";
         highScoreFilePath = @"..\others\" + highScoreFileName;
         if (!File.Exists(highScoreFilePath))
@@ -42,23 +44,22 @@ public class LogicManagerScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
-        {
             Application.Quit();
-        }
     }
 
-    public void addScore(int scoreToAdd = 1)
+    public void AddScore(int scoreToAdd = 1)
     {
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
     }
 
-    public void defeat(int defeatReasonNumber)
+    public void Defeat(int defeatReasonNumber)
     {
         if (!gameLost)
         {
             gameLost = true;
 
+            //Defeat reason
             switch (defeatReasonNumber)
             {
                 case 1:
@@ -94,7 +95,7 @@ public class LogicManagerScript : MonoBehaviour
         }
     }
 
-    public void restartGame()
+    public void RestartGame()
     {
         SceneManager.LoadScene("Main");
     }

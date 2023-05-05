@@ -124,5 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87b56ba9825b484894cea60eb4259d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 0}
-  logic: {fileID: 0}
+  spawner: {fileID: 0}
+  logicManager: {fileID: 0}
+  slowMotionPowerUp: {fileID: 2118316927658380923, guid: f9c300d20afb4d3479e80a05c8d90348, type: 3}
