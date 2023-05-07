@@ -16,17 +16,17 @@ public class SpawnerScript : MonoBehaviour
     }
     private void Update()
     {
-        //Spawning bricks based on a few conditions
         if (brickCount == 0)
         {
             if (timer < 1)
+            {
                 timer += Time.deltaTime;
+            }
 
             else
             {
                 lvl++;
 
-                //Checking lvl value and spawning bricks based on the result
                 switch (lvl)
                 {
                     case 2:
@@ -53,8 +53,6 @@ public class SpawnerScript : MonoBehaviour
             }
         }
     }
-
-    //Method for spawning bricks
     private void Spawn(int bricksOnSide, int verticalOffset)
     {
         for (int i = 0; i < bricksOnSide; i++)
