@@ -17,23 +17,11 @@ public class PlatformScript: MonoBehaviour
     {
         ballScript = GameObject.FindGameObjectWithTag("Ball").GetComponent<BallScript>();
     }
-    void Update()
+    void FixedUpdate()
     {
+        //Platform movement
         horizontalAxisValue = Input.GetAxisRaw("Horizontal");
-
         platformRigidbody2D.velocity = new Vector2(horizontalAxisValue * platformSpeed, 0f);
-
-        if (transform.position.x > 7 || transform.position.x < -7)
-        {
-            if (transform.position.x > 7)
-                transform.position = new Vector3(7, transform.position.y, 0f);
-            if (transform.position.x < 7)
-                transform.position = new Vector3(-7, transform.position.y, 0f);
-        }
-
-        if (slowMotionPowerUp.transform.position.y >= -5.5f)
-            Destroy(slowMotionPowerUp);
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -49,7 +37,7 @@ public class PlatformScript: MonoBehaviour
                 ballScript.ballTrailRenderer.enabled = true;
 
                 //After 5 seconds everything goes back to normal
-                if (timer <= 5)
+                if (timer < 5)
                 {
                     timer += Time.deltaTime;
                 }
@@ -58,6 +46,8 @@ public class PlatformScript: MonoBehaviour
                     platformSpeed *= 2;
                     ballScript.ballSpeed *= 2;
                     ballScript.ballTrailRenderer.enabled = false;
+                    timer = 0f;
+                    Debug.Log("Power Up ended");
                 }
 
                 Destroy(collision.gameObject);
