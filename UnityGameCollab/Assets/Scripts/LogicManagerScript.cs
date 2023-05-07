@@ -10,17 +10,17 @@ public class LogicManagerScript : MonoBehaviour
 {
     public int playerScore = 0;
     public int playerHighscore;
-    public Text scoreText;
+    public string highScoreFilePath;
+    public string highScoreFileName;
     public bool gameLost = false;
-    public GameObject GameOverParent;
-    public GameObject ScoreText;
+    public Text scoreText;
     public Text GameOverReasonText;
     public Text GameOverScoreText;
     public Text GameOverHighscoreText;
+    public GameObject GameOverParent;
+    public GameObject ScoreText;
     public StreamWriter highScoreFileWriter;
     public StreamReader highScoreFileReader;
-    public string highScoreFilePath;
-    public string highScoreFileName;
     // Start is called before the first frame update
     void Start()
     {

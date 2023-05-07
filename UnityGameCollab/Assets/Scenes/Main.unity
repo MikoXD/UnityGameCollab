@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477129345}
   - component: {fileID: 477129344}
+  - component: {fileID: 477129346}
   m_Layer: 0
   m_Name: LogicManager
   m_TagString: LogicManager
@@ -234,15 +235,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: 0
   playerHighscore: 0
-  scoreText: {fileID: 227193835}
+  highScoreFilePath: 
+  highScoreFileName: 
   gameLost: 0
-  GameOverParent: {fileID: 901881809}
-  ScoreText: {fileID: 227193833}
+  scoreText: {fileID: 227193835}
   GameOverReasonText: {fileID: 630448710}
   GameOverScoreText: {fileID: 2127467043}
   GameOverHighscoreText: {fileID: 1289412481}
-  highScoreFilePath: 
-  highScoreFileName: 
+  GameOverParent: {fileID: 901881809}
+  ScoreText: {fileID: 227193833}
 --- !u!4 &477129345
 Transform:
   m_ObjectHideFlags: 0
@@ -258,6 +259,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &477129346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477129343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f82b7b2c700944db153514744e3ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &511374054
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallRigidBody: {fileID: 1204429704}
   Platform: {fileID: 1521749443}
-  logic: {fileID: 0}
+  logic: {fileID: 477129344}
   ballSpeed: 15
   bounceAngleMultiplier: 6
 --- !u!1 &1289412479
@@ -1073,8 +1086,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb5ba92ef9a92b408a65f9613ca5235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 519420031}
   speed: 24
-  rb: {fileID: 1521749450}
+  PlatformRigidBody: {fileID: 1521749450}
+  logic: {fileID: 477129344}
 --- !u!212 &1521749446
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1354,7 +1369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brick: {fileID: 3328342706824316554, guid: 5dca411fd19f8b94ea6d75924fbfd661, type: 3}
   brickCount: 0
-  lvl: 4
+  lvl: 1
 --- !u!1 &2112793988
 GameObject:
   m_ObjectHideFlags: 0

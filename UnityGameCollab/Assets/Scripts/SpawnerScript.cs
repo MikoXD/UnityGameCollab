@@ -12,7 +12,7 @@ public class SpawnerScript : MonoBehaviour
 
     private void Start()
     {
-        Spawn(3, 0);
+
     }
     private void Update()
     {
@@ -29,23 +29,26 @@ public class SpawnerScript : MonoBehaviour
 
                 switch (lvl)
                 {
+                    case 1:
+                        SpawnBricks(3, 0);
+                        break;
                     case 2:
-                        Spawn(5, 0);
+                        SpawnBricks(5, 0);
                         break;
                     case 3:
-                        Spawn(8, 0);
+                        SpawnBricks(8, 0);
                         break;
                     case 4:
-                        Spawn(3, 1);
-                        Spawn(8, 0);
+                        SpawnBricks(3, 1);
+                        SpawnBricks(8, 0);
                         break;
                     case 5:
-                        Spawn(5, 1);
-                        Spawn(8, 0);
+                        SpawnBricks(5, 1);
+                        SpawnBricks(8, 0);
                         break;
                     case 6:
-                        Spawn(8, 1);
-                        Spawn(8, 0);
+                        SpawnBricks(8, 1);
+                        SpawnBricks(8, 0);
                         break;
                 }
 
@@ -53,7 +56,7 @@ public class SpawnerScript : MonoBehaviour
             }
         }
     }
-    private void Spawn(int bricksOnSide, int verticalOffset)
+    private void SpawnBricks(int bricksOnSide, int verticalOffset)
     {
         for (int i = 0; i < bricksOnSide; i++)
         { 

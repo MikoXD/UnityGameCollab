@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawner
   - LogicManager
+  - TitleLogicManager
   layers:
   - Default
   - TransparentFX
