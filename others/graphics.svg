@@ -27,8 +27,8 @@
      borderlayer="true"
      inkscape:snap-page="true"
      inkscape:zoom="1.1687991"
-     inkscape:cx="308.86403"
-     inkscape:cy="216.88928"
+     inkscape:cx="337.52593"
+     inkscape:cy="353.78193"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1432"
@@ -85,36 +85,5 @@
        inkscape:export-filename="D:\Janek_prywatne_D\unity\Gra z mikim\UnityGameCollab\UnityGameCollab\Assets\Sprites\brick.png"
        inkscape:export-xdpi="195.80299"
        inkscape:export-ydpi="195.80299" />
-    <g
-       id="g6724"
-       inkscape:export-filename="D:\Janek_prywatne_D\unity\Gra z mikim\UnityGameCollab\UnityGameCollab\Assets\Sprites\Slo-mo_powerup.png"
-       inkscape:export-xdpi="195.80299"
-       inkscape:export-ydpi="195.80299">
-      <path
-         id="path1007"
-         style="fill:#fae5c3;fill-opacity:1;stroke:#000000;stroke-width:2.64583;stroke-linecap:round;paint-order:markers fill stroke"
-         d="M 95.728012,50.674354 A 13.233707,11.218664 0 0 1 108.96172,39.45569 13.233707,11.218664 0 0 1 122.19542,50.674354" />
-      <rect
-         style="fill:#b36538;fill-opacity:1;stroke:#000000;stroke-width:2.64583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
-         id="rect1362"
-         width="32.443935"
-         height="6.333118"
-         x="92.739738"
-         y="50.050892"
-         ry="3.166559" />
-      <path
-         id="path1544"
-         style="fill:#fae5c3;fill-opacity:1;stroke:#000000;stroke-width:2.64583;stroke-linecap:round;paint-order:markers fill stroke"
-         d="M 122.19542,28.299522 A 13.233707,11.218664 0 0 1 108.96172,39.518185 13.233707,11.218664 0 0 1 95.728012,28.299522" />
-      <rect
-         style="fill:#b36538;fill-opacity:1;stroke:#000000;stroke-width:2.64583;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
-         id="rect1546"
-         width="32.443935"
-         height="6.333118"
-         x="-125.18368"
-         y="-28.922985"
-         ry="3.166559"
-         transform="scale(-1)" />
-    </g>
   </g>
 </svg>
