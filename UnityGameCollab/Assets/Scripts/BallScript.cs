@@ -27,7 +27,7 @@ public class BallScript : MonoBehaviour
         if (BallRigidBody.velocity.magnitude != ballSpeed && !logic.gameLost)
         {
             BallRigidBody.velocity = BallRigidBody.velocity.normalized * ballSpeed;
-            Debug.Log("Ball velocity set back to " + ballSpeed);
+            Debug.Log("Ball velocity set back to " + (BallRigidBody.velocity.normalized * ballSpeed).magnitude);
         }
 
         //Correcting ball vector if it's horizontal (olr close to)
