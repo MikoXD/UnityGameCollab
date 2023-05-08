@@ -9,8 +9,9 @@ public class PlatformScript: MonoBehaviour
     public float platformSpeed;
     private float timer = 0f;
     public Rigidbody2D platformRigidbody2D;
+    private bool slowMotionPowerUpOn = false;
+    public float slowDown = 2;
 
-    [SerializeField] private GameObject slowMotionPowerUp;
     [SerializeField] private BallScript ballScript;
 
     private void Start()
@@ -19,38 +20,49 @@ public class PlatformScript: MonoBehaviour
     }
     void FixedUpdate()
     {
+        //Timer for slow motion power up
+        if (slowMotionPowerUpOn)
+        {
+            if (timer < 5)
+                timer += Time.deltaTime;
+
+            //After 5 seconds everything goes back to normal
+            else
+            {
+                platformSpeed *= slowDown;
+                ballScript.ballSpeed *= slowDown;
+                ballScript.ballTrailRenderer.enabled = false;
+                timer = 0f;
+                slowMotionPowerUpOn = false;
+                Debug.Log("Power Up ended");
+            }
+        }
+
         //Platform movement
         horizontalAxisValue = Input.GetAxisRaw("Horizontal");
         platformRigidbody2D.velocity = new Vector2(horizontalAxisValue * platformSpeed, 0f);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
         //Checking which PowerUp hit the platform
         switch (collision.gameObject.layer)
         {
+            //Slow motion power up
             case 7:
 
-                //Slowing everything down
-                platformSpeed *= 0.5f;
-                ballScript.ballSpeed *= 0.5f;
-                ballScript.ballTrailRenderer.enabled = true;
-
-                //After 5 seconds everything goes back to normal
-                if (timer < 5)
-                {
-                    timer += Time.deltaTime;
-                }
-                else
-                {
-                    platformSpeed *= 2;
-                    ballScript.ballSpeed *= 2;
-                    ballScript.ballTrailRenderer.enabled = false;
-                    timer = 0f;
-                    Debug.Log("Power Up ended");
-                }
-
                 Destroy(collision.gameObject);
+
+                if (!slowMotionPowerUpOn)
+                {
+                    //Slowing everything down
+                    platformSpeed /= slowDown;
+                    ballScript.ballSpeed /= slowDown;
+                    ballScript.ballTrailRenderer.enabled = true;
+                }
+
+                slowMotionPowerUpOn = true;
+                timer = 0f;
 
                 break;
         }

@@ -994,7 +994,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204429702}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1007,7 +1007,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1058,7 +1058,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 0}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1189,6 +1189,7 @@ GameObject:
   - component: {fileID: 1521749453}
   - component: {fileID: 1521749452}
   - component: {fileID: 1521749451}
+  - component: {fileID: 1521749454}
   m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
@@ -1225,7 +1226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformSpeed: 15
   platformRigidbody2D: {fileID: 1521749450}
-  slowMotionPowerUp: {fileID: 2118316927658380923, guid: f9c300d20afb4d3479e80a05c8d90348, type: 3}
+  slowDown: 2
   ballScript: {fileID: 1204429707}
 --- !u!212 &1521749446
 SpriteRenderer:
@@ -1358,6 +1359,32 @@ CircleCollider2D:
   m_Offset: {x: 4.98785, y: 0}
   serializedVersion: 2
   m_Radius: 0.9298489
+--- !u!61 &1521749454
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521749442}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013490677, y: 0.8095535}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.87, y: 1.85}
+    newSize: {x: 11.87, y: 1.85}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.815252, y: 0.2308929}
+  m_EdgeRadius: 0
 --- !u!1 &1676090408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1620,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 477129344}
         m_TargetAssemblyTypeName: LogicManagerScript, Assembly-CSharp
-        m_MethodName: restartGame
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

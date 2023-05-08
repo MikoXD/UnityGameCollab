@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceenScript : MonoBehaviour
 {
     private LogicManagerScript logicManager;
+
     private void Start()
     {
         logicManager = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
