@@ -12,15 +12,17 @@ public class LogicManagerScript : MonoBehaviour
     public int playerHighscore;
     public Text scoreText;
     public bool gameLost = false;
-    public GameObject GameOverParent;
-    public GameObject ScoreText;
-    public Text GameOverReasonText;
-    public Text GameOverScoreText;
-    public Text GameOverHighscoreText;
+    public GameObject gameOverParent;
+    public GameObject scoreTextObject;
+    public Text gameOverReasonText;
+    public Text gameOverScoreText;
+    public Text gameOverHighscoreText;
+    public Text gameOverText;
     public StreamWriter highScoreFileWriter;
     public StreamReader highScoreFileReader;
     public string highScoreFilePath;
     public string highScoreFileName;
+    public Rigidbody2D ballRigidBody2D;
 
     // Start is called before the first frame update
     void Start()
@@ -63,14 +65,19 @@ public class LogicManagerScript : MonoBehaviour
             switch (defeatReasonNumber)
             {
                 case 1:
-                    GameOverReasonText.text = "Ball fell out of the zone";
+                    gameOverReasonText.text = "Ball fell out the zone";
+                    gameOverText.color = Color.red;
+                    break;
+                case 2:
+                    gameOverReasonText.text = "You won!";
+                    gameOverText.color = Color.green;
                     break;
             }
 
-            GameOverScoreText.text = "Score: " + playerScore.ToString();
+            gameOverScoreText.text = "Score: " + playerScore.ToString();
 
-            GameOverParent.SetActive(true);
-            ScoreText.SetActive(false);
+            gameOverParent.SetActive(true);
+            scoreTextObject.SetActive(false);
 
             Debug.Log("DEFEAT");
 
@@ -88,10 +95,13 @@ public class LogicManagerScript : MonoBehaviour
 
             playerHighscore = intScores.Max();
 
-            GameOverHighscoreText.text = "Highscore: " + playerHighscore;
+            gameOverHighscoreText.text = "Highscore: " + playerHighscore;
 
             highScoreFileReader.Close();
             Debug.Log("Read-Closed file " + highScoreFileName + " in " + highScoreFilePath);
+
+            if (ballRigidBody2D.velocity.magnitude != 0)
+                ballRigidBody2D.velocity = Vector2.zero;
         }
     }
 

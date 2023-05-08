@@ -5,47 +5,74 @@ using UnityEngine;
 public class SpawnerScript : MonoBehaviour
 {
     [SerializeField] private GameObject brick;
+    [SerializeField] private LogicManagerScript logicManagerScript;
 
-    public int brickCount = 1;
+    public int brickCount = 0;
     public int lvl = 1;
     private float timer = 0;
 
     private void Start()
     {
-        Spawn(3, 0);
+        logicManagerScript = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
     }
     private void Update()
     {
-        //Spawning bricks based on a few conditions
         if (brickCount == 0)
         {
             if (timer < 1)
+            {
                 timer += Time.deltaTime;
+            }
 
             else
             {
                 lvl++;
 
-                //Checking lvl value and spawning bricks based on the result
                 switch (lvl)
                 {
+                    case 1:
+                        SpawnBricks(3, 0);
+                        break;
                     case 2:
-                        Spawn(5, 0);
+                        SpawnBricks(5, 0);
                         break;
                     case 3:
-                        Spawn(8, 0);
+                        SpawnBricks(7, 0);
                         break;
                     case 4:
-                        Spawn(3, 1);
-                        Spawn(8, 0);
+                        SpawnBricks(3, 1);
+                        SpawnBricks(7, 0);
                         break;
                     case 5:
-                        Spawn(5, 1);
-                        Spawn(8, 0);
+                        SpawnBricks(5, 1);
+                        SpawnBricks(7, 0);
                         break;
                     case 6:
-                        Spawn(8, 1);
-                        Spawn(8, 0);
+                        SpawnBricks(7, 1);
+                        SpawnBricks(7, 0);
+                        break;
+                    case 7:
+                        SpawnBricks(3, 2);
+                        SpawnBricks(7, 1);
+                        SpawnBricks(7, 0);
+                        break;
+                    case 8:
+                        SpawnBricks(5, 2);
+                        SpawnBricks(7, 1);
+                        SpawnBricks(7, 0);
+                        break;
+                    case 9:
+                        SpawnBricks(7, 2);
+                        SpawnBricks(7, 1);
+                        SpawnBricks(7, 0);
+                        break;
+                    case 10:
+                        SpawnBricks(5, 2);
+                        SpawnBricks(3, 1);
+                        SpawnBricks(7, 0);
+                        break;
+                    case 11:
+                        logicManagerScript.Defeat(2);
                         break;
                 }
 
@@ -54,13 +81,12 @@ public class SpawnerScript : MonoBehaviour
         }
     }
 
-    //Method for spawning bricks
-    private void Spawn(int bricksOnSide, int verticalOffset)
+    private void SpawnBricks(int bricksOnSide, int verticalOffset)
     {
         for (int i = 0; i < bricksOnSide; i++)
-        { 
-            Instantiate(brick, transform.position - new Vector3(i + 0.5f, verticalOffset, 0f), transform.rotation);
-            Instantiate(brick, transform.position + new Vector3(i + 0.5f, -verticalOffset, 0f), transform.rotation);
+        {
+            Instantiate(brick, transform.position - new Vector3(i * (1.16f + 0.05f) + 0.58f + 0.025f, verticalOffset + 0.05f * verticalOffset, 0f), transform.rotation);
+            Instantiate(brick, transform.position + new Vector3(i * (1.16f + 0.05f) + 0.58f + 0.025f, -verticalOffset - 0.05f * verticalOffset, 0f), transform.rotation);
         }
         brickCount += bricksOnSide * 2;
     }

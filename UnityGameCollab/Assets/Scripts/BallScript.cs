@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallScript : MonoBehaviour
@@ -11,8 +12,8 @@ public class BallScript : MonoBehaviour
     public LogicManagerScript logicManager;
 
     public TrailRenderer ballTrailRenderer;
-    public float ballSpeed = 10;
-    public float bounceAngleMultiplier = 5;
+    public float ballSpeed = 10f;
+    public float bounceAngleMultiplier = 5f;
 
     void Start()
     {
@@ -41,10 +42,6 @@ public class BallScript : MonoBehaviour
             BallRigidBody.velocity = new Vector2(BallRigidBody.velocity.x, Math.Abs(BallRigidBody.velocity.y) + 1);
             Debug.Log("Ball vector corrected");
         }
-
-        //Game over when ball is below the visible area
-        if (transform.position.y <= -5.5)
-            logicManager.Defeat(1);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

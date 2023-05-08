@@ -236,13 +236,15 @@ MonoBehaviour:
   playerHighscore: 0
   scoreText: {fileID: 227193835}
   gameLost: 0
-  GameOverParent: {fileID: 901881809}
-  ScoreText: {fileID: 227193833}
-  GameOverReasonText: {fileID: 630448710}
-  GameOverScoreText: {fileID: 2127467043}
-  GameOverHighscoreText: {fileID: 1289412481}
+  gameOverParent: {fileID: 901881809}
+  scoreTextObject: {fileID: 227193833}
+  gameOverReasonText: {fileID: 630448710}
+  gameOverScoreText: {fileID: 2127467043}
+  gameOverHighscoreText: {fileID: 1289412481}
+  gameOverText: {fileID: 765065729}
   highScoreFilePath: 
   highScoreFileName: 
+  ballRigidBody2D: {fileID: 1204429704}
 --- !u!4 &477129345
 Transform:
   m_ObjectHideFlags: 0
@@ -629,7 +631,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -5.0562525}
+  m_Offset: {x: 0, y: -6.1406994}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -982,7 +984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallRigidBody: {fileID: 1204429704}
   Platform: {fileID: 1521749443}
-  logicManager: {fileID: 0}
+  logicManager: {fileID: 477129344}
   ballTrailRenderer: {fileID: 1204429708}
   ballSpeed: 15
   bounceAngleMultiplier: 6
@@ -1532,6 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brick: {fileID: 3328342706824316554, guid: 5dca411fd19f8b94ea6d75924fbfd661, type: 3}
+  logicManagerScript: {fileID: 477129344}
   brickCount: 0
   lvl: 0
 --- !u!1 &2112793988
