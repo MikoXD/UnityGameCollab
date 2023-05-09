@@ -7,18 +7,38 @@ using UnityEngine;
 public class BallScript : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D BallRigidBody;
-    [SerializeField] private Transform Platform;
+    [SerializeField] public TrailRenderer ballTrailRenderer;
+    [SerializeField] private PlatformScript platformScript;
+    [SerializeField] private SceenScript screenScript;
 
     public LogicManagerScript logicManager;
-
-    public TrailRenderer ballTrailRenderer;
     public float ballSpeed = 10f;
     public float bounceAngleMultiplier = 5f;
+    public GameObject ballPrefab;
+    public int randomVectorValue;
+    public Vector2 parentBallVelocity = Vector2.zero;
+    public bool didFirstBallSpawned = false;
+    public int ballsToCreate;
 
     void Start()
     {
         //Give the ball initial speed
-        BallRigidBody.velocity = new Vector2(-5, 5);
+        randomVectorValue = UnityEngine.Random.Range(-5, 6);
+
+        //Starting ball initial speed
+        if (parentBallVelocity == Vector2.zero)
+            BallRigidBody.velocity = new Vector2(randomVectorValue, randomVectorValue);
+
+        //The initial speed for cloned balls
+        else
+            BallRigidBody.velocity = new Vector2(BallRigidBody.velocity.x, BallRigidBody.velocity.y + 1f);
+
+        //Spawning balls if the conditions are met
+        if (platformScript.ballCloningPowerUpOn)
+            if (ballsToCreate > 0)
+                BallCloningPowerUp(ballsToCreate);
+            else
+                platformScript.ballCloningPowerUpOn = false;
 
         //Get LogicManagerScript for later references
         logicManager = GameObject.FindGameObjectWithTag("LogicManager").GetComponent<LogicManagerScript>();
@@ -48,6 +68,14 @@ public class BallScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
             //the ball's bounce angle depends on place where it hit the platform
-            BallRigidBody.velocity = new Vector2((transform.position.x - Platform.position.x) * bounceAngleMultiplier, BallRigidBody.velocity.y);
+            BallRigidBody.velocity = new Vector2((transform.position.x - platformScript.transform.position.x) * bounceAngleMultiplier, BallRigidBody.velocity.y);
+    }
+    public void BallCloningPowerUp(int ballsToCreate)
+    {
+        parentBallVelocity = BallRigidBody.velocity;
+        Instantiate(ballPrefab, transform.position, transform.rotation);
+
+        screenScript.ballsNumber++;
+        ballsToCreate--;
     }
 }
