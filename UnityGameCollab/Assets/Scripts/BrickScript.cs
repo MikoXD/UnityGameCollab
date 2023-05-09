@@ -23,7 +23,6 @@ public class BrickScript : MonoBehaviour
         {
             Destroy(gameObject);
             spawner.brickCount--;
-            logicManager.AddScore(1);
         }
 
         //Spawning PowerUps
@@ -31,6 +30,7 @@ public class BrickScript : MonoBehaviour
 
         switch(spawningChance)
         {
+            //Slow motion power up
             case 1:
                 Instantiate(slowMotionPowerUp, transform.position, transform.rotation);
                 break;
