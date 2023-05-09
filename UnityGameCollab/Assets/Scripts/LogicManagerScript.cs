@@ -5,10 +5,13 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LogicManagerScript : MonoBehaviour
 {
     public int playerScore = 0;
+    public float gamingTime = 0;
+    public float gamingTimeFromLastFrame;
     public int playerHighscore;
     public Text scoreText;
     public bool gameLost = false;
@@ -48,6 +51,23 @@ public class LogicManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) 
             Application.Quit();
     }
+    private void FixedUpdate()
+    {
+        //Timer
+        if (!gameLost)
+        {
+            gamingTime += Time.deltaTime;
+
+            //Chcecking if the rounded value from last frame + 1 is equal to rounded value this frame
+            if (Math.Round(gamingTimeFromLastFrame) + 1 == Math.Round(gamingTime))
+            {
+                AddScore(1);
+                Debug.Log($"Player score: {playerScore}");
+            }
+
+            gamingTimeFromLastFrame = gamingTime;
+        }
+    }
 
     public void AddScore(int scoreToAdd = 1)
     {
@@ -74,7 +94,7 @@ public class LogicManagerScript : MonoBehaviour
                     break;
             }
 
-            gameOverScoreText.text = "Score: " + playerScore.ToString();
+            gameOverScoreText.text = $"Time: {playerScore}";
 
             gameOverParent.SetActive(true);
             scoreTextObject.SetActive(false);
@@ -82,23 +102,23 @@ public class LogicManagerScript : MonoBehaviour
             Debug.Log("DEFEAT");
 
             highScoreFileWriter.WriteLine(playerScore);
-            Debug.Log("Score " + playerScore + " written to file " + highScoreFileName + " in " + highScoreFilePath);
+            Debug.Log($"Time {playerScore} written to file {highScoreFileName} in {highScoreFilePath}");
 
             highScoreFileWriter.Close();
-            Debug.Log("Write-Closed file " + highScoreFileName + " in " + highScoreFilePath);
+            Debug.Log($"Write-Closed file {highScoreFileName} in {highScoreFilePath}");
 
             highScoreFileReader = File.OpenText(highScoreFilePath);
-            Debug.Log("Read-Opened file " + highScoreFileName + " in " + highScoreFilePath);
+            Debug.Log($"Read-Opened file {highScoreFileName} in {highScoreFilePath}");
 
             List<string> stringScores = File.ReadAllLines(highScoreFilePath).ToList();
             List<int> intScores = stringScores.ConvertAll(int.Parse);
 
             playerHighscore = intScores.Max();
 
-            gameOverHighscoreText.text = "Highscore: " + playerHighscore;
+            gameOverHighscoreText.text = $"Best time: {playerHighscore}";
 
             highScoreFileReader.Close();
-            Debug.Log("Read-Closed file " + highScoreFileName + " in " + highScoreFilePath);
+            Debug.Log($"Read-Closed file {highScoreFileName} in {highScoreFilePath}");
 
             if (ballRigidBody2D.velocity.magnitude != 0)
                 ballRigidBody2D.velocity = Vector2.zero;

@@ -27,7 +27,7 @@ public class SpawnerScript : MonoBehaviour
             else
             {
                 lvl++;
-
+                //Levels
                 switch (lvl)
                 {
                     case 1:
@@ -80,7 +80,7 @@ public class SpawnerScript : MonoBehaviour
             }
         }
     }
-
+    //Spawning bricks from the middle to the sides
     private void SpawnBricks(int bricksOnSide, int verticalOffset)
     {
         for (int i = 0; i < bricksOnSide; i++)

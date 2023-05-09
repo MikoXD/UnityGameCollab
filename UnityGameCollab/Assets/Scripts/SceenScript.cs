@@ -12,7 +12,7 @@ public class SceenScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        //Collision with a ball
         if (collision.gameObject.layer == 3)
         {
             logicManager.Defeat(1);
