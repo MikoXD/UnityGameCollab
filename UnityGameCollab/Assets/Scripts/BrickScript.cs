@@ -7,6 +7,7 @@ public class BrickScript : MonoBehaviour
     public SpawnerScript spawner;
     public LogicManagerScript logicManager;
     public GameObject slowMotionPowerUp;
+    public GameObject ballCloningPowerUp;
     public Vector2 brickSize;
 
     private void Start()
@@ -33,6 +34,9 @@ public class BrickScript : MonoBehaviour
         {
             case 1:
                 Instantiate(slowMotionPowerUp, transform.position, transform.rotation);
+                break;
+            case 2:
+                Instantiate(ballCloningPowerUp, transform.position, transform.rotation);
                 break;
         }
     }

@@ -127,3 +127,5 @@ MonoBehaviour:
   spawner: {fileID: 0}
   logicManager: {fileID: 0}
   slowMotionPowerUp: {fileID: 2118316927658380923, guid: f9c300d20afb4d3479e80a05c8d90348, type: 3}
+  ballCloningPowerUp: {fileID: 2713460532511825062, guid: 860f055b058a2204b8a68010681c6a39, type: 3}
+  brickSize: {x: 0, y: 0}

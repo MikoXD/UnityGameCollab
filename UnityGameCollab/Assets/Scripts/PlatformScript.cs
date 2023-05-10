@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class PlatformScript: MonoBehaviour
+class PlatformScript: MonoBehaviour
 {
     private float horizontalAxisValue;
     public float platformSpeed;
     private float timer = 0f;
     public Rigidbody2D platformRigidbody2D;
     private bool slowMotionPowerUpOn = false;
+    public bool ballCloningPowerUpOn = false;
     public float slowDown = 2;
 
     [SerializeField] private BallScript ballScript;
@@ -30,11 +31,10 @@ public class PlatformScript: MonoBehaviour
             else
             {
                 platformSpeed *= slowDown;
-                ballScript.ballSpeed *= slowDown;
-                ballScript.ballTrailRenderer.enabled = false;
+                ballScript.SlowMotionPowerUp(false);
                 timer = 0f;
                 slowMotionPowerUpOn = false;
-                Debug.Log("Power Up ended");
+                Debug.Log("SlowMotionPowerUp ended");
             }
         }
 
@@ -57,12 +57,22 @@ public class PlatformScript: MonoBehaviour
                 {
                     //Slowing everything down
                     platformSpeed /= slowDown;
-                    ballScript.ballSpeed /= slowDown;
-                    ballScript.ballTrailRenderer.enabled = true;
+                    ballScript.SlowMotionPowerUp(true);
                 }
 
                 slowMotionPowerUpOn = true;
                 timer = 0f;
+
+                break;
+
+            //Ball cloning power up
+            case 8:
+
+                Destroy(collision.gameObject);
+                Debug.Log("Triggered");
+
+                ballCloningPowerUpOn = true;
+                ballScript.BallCloningPowerUp(2);
 
                 break;
         }

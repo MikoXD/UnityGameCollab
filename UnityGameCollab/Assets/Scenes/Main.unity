@@ -618,6 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a460cece578c8f4478a18bd6fc636452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballsNumber: 1
 --- !u!61 &674916707
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -983,11 +984,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BallRigidBody: {fileID: 1204429704}
-  Platform: {fileID: 1521749443}
-  logicManager: {fileID: 477129344}
   ballTrailRenderer: {fileID: 1204429708}
+  platformScript: {fileID: 1521749444}
+  screenScript: {fileID: 674916706}
+  logicManager: {fileID: 477129344}
   ballSpeed: 15
   bounceAngleMultiplier: 6
+  ballPrefab: {fileID: 6195504725695395095, guid: 836d99884bf0eaf4fb8f3246dad586cc, type: 3}
+  randomVectorValue: 0
+  parentBallVelocity: {x: 0, y: 0}
+  didFirstBallSpawned: 0
+  ballsToCreate: 0
+  firstBall: {fileID: 0}
+  secondBall: {fileID: 0}
 --- !u!96 &1204429708
 TrailRenderer:
   serializedVersion: 2
@@ -1194,7 +1203,7 @@ GameObject:
   - component: {fileID: 1521749454}
   m_Layer: 6
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1207,7 +1216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521749442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.53, z: 0}
+  m_LocalPosition: {x: 0, y: -4.13, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1228,6 +1237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformSpeed: 15
   platformRigidbody2D: {fileID: 1521749450}
+  ballCloningPowerUpOn: 0
   slowDown: 2
   ballScript: {fileID: 1204429707}
 --- !u!212 &1521749446
